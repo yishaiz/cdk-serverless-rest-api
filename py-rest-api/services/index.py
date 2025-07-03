@@ -11,7 +11,7 @@ table = dynamodb.Table(table_name)
 def handler(event, context):
     return {
         "statusCode": 200,
-        "body": json.dumps({"Hello !"),
+        "body": json.dumps("Hello !"),
     }
     
     # method = event["httpMethod"]
