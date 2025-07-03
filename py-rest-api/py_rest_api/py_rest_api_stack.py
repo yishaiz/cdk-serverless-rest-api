@@ -2,7 +2,7 @@ from aws_cdk import (
     Stack,
     aws_apigateway,
     aws_lambda,
-    aws_dynamodb
+    # aws_dynamodb
 )
 from constructs import Construct
 
