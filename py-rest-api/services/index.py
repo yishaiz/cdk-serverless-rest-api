@@ -3,9 +3,9 @@ import boto3
 import os
 import uuid
 
-table_name = os.environ.get("TABLE_NAME")
-dynamodb = boto3.resource("dynamodb")
-table = dynamodb.Table(table_name)
+# table_name = os.environ.get("TABLE_NAME")
+# dynamodb = boto3.resource("dynamodb")
+# table = dynamodb.Table(table_name)
 
 
 def handler(event, context):
