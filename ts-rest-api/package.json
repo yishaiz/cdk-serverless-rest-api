@@ -11,7 +11,7 @@
     "cdk": "cdk"
   },
   "devDependencies": {
-    "@types/aws-lambda": "^8.10.124",
+    "@types/aws-lambda": "^8.10.150",
     "@types/jest": "^29.5.5",
     "@types/node": "20.6.3",
     "aws-cdk": "2.99.1",
@@ -24,7 +24,7 @@
     "@aws-sdk/util-dynamodb": "^3.428.0",
     "aws-cdk-lib": "2.99.1",
     "constructs": "^10.0.0",
-    "esbuild": "^0.19.4",
+    "esbuild": "^0.19.12",
     "source-map-support": "^0.5.21"
   }
 }
