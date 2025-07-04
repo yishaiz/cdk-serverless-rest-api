@@ -13,7 +13,6 @@ async function handler(
   event: APIGatewayProxyEvent,
   context: Context
 ): Promise<APIGatewayProxyResult> {
-    
   let response: APIGatewayProxyResult = {} as any;
 
   try {
@@ -34,12 +33,12 @@ async function handler(
     };
   }
 
+  response.headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': '*',
+  };
+
   return response;
 }
 
 export { handler };
-
-//   response.headers = {
-//     'Access-Control-Allow-Origin': '*',
-//     'Access-Control-Allow-Methods': '*',
-//   };

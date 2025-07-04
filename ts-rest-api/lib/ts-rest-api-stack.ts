@@ -34,14 +34,16 @@ export class TsRestApiStack extends cdk.Stack {
 
     employeesTable.grantReadWriteData(emplLambda);
 
-    //   const optionsWithCors: ResourceOptions = {
-    //     defaultCorsPreflightOptions: {
-    //         allowOrigins: Cors.ALL_ORIGINS,
-    //         allowMethods: Cors.ALL_METHODS
-    //     }
-    // }
     const api = new RestApi(this, 'TS-EmplApi');
-    const emplResource = api.root.addResource('empl');
+
+    const optionsWithCors: ResourceOptions = {
+      defaultCorsPreflightOptions: {
+        allowOrigins: Cors.ALL_ORIGINS,
+        allowMethods: Cors.ALL_METHODS,
+      },
+    };
+
+    const emplResource = api.root.addResource('empl', optionsWithCors);
 
     const emplLambdaIntegration = new LambdaIntegration(emplLambda);
 
@@ -49,4 +51,4 @@ export class TsRestApiStack extends cdk.Stack {
     emplResource.addMethod('POST', emplLambdaIntegration);
   }
 }
-// const emplResource = api.root.addResource('empl', optionsWithCors);
+ 

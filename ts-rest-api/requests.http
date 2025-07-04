@@ -1,6 +1,6 @@
-@url = https://qienrar5kj.execute-api.eu-west-1.amazonaws.com/prod/
+@url = https://.execute-api.us-east-1.amazonaws.com/prod/
 
-GET {{url}}/empl?id=15e39cf8-1713-465c-b3c1-fc86471cd90a
+GET {{url}}/empl?id=bffc6492-9c79-49dd-be7f-971481715ef4
 ###
 
 POST {{url}}/empl

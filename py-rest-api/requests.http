@@ -1,6 +1,6 @@
-@url = https://n4kxsma05j.execute-api.us-east-1.amazonaws.com/prod
+@url = https://.execute-api.us-east-1.amazonaws.com/prod
 
-GET {{url}}/empl?id=7a2233e7-b8cb-43d1-8a00-bc9ead3da5a5
+GET {{url}}/empl?id=3f587052-220c-42ba-806b-9261552d2ad4
 ###
 
 POST {{url}}/empl
@@ -16,5 +16,3 @@ content-type: application/json
 # test wrong id
 GET {{url}}/empl?id=1234
 ###
-
-# @url = https://covr3k2a3h.execute-api.eu-west-1.amazonaws.com/prod/
