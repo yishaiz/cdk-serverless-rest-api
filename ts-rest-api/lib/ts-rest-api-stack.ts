@@ -15,24 +15,24 @@ export class TsRestApiStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    // const employeesTable = new TableV2(this, 'TS-EmplTable', {
-    //   partitionKey: {
-    //     name: 'id',
-    //     type: AttributeType.STRING
-    //   },
-    //   billing: Billing.onDemand()
-    // });
+    const employeesTable = new TableV2(this, 'TS-EmplTable', {
+      partitionKey: {
+        name: 'id',
+        type: AttributeType.STRING,
+      },
+      billing: Billing.onDemand(),
+    });
 
     const emplLambda = new NodejsFunction(this, 'Ts-EmplLambda', {
       runtime: Runtime.NODEJS_18_X,
       handler: 'handler',
       entry: join(__dirname, '..', 'services', 'handler.ts'),
+      environment: {
+        TABLE_NAME: employeesTable.tableName,
+      },
     });
-    // environment: {
-    //   TABLE_NAME: employeesTable.tableName
-    // },
 
-    // employeesTable.grantReadWriteData(emplLambda);
+    employeesTable.grantReadWriteData(emplLambda);
 
     //   const optionsWithCors: ResourceOptions = {
     //     defaultCorsPreflightOptions: {
